@@ -17,6 +17,7 @@ The latest tag will always follow the main branch in git. the other versions wil
  
 | Docker Tag | PHP Version | Nginx Version | Alpine Version | Container Scripts | Notes |
 |-----|-------|-----|--------|--------|----------|
+| 3.2.1 | 8.2.35 |1.30.6-r0 | 3.24 | 0.3.18 | fix CI image name (3.2.0 was never published) |
 | 3.2.0 | 8.2.35 |1.30.6-r0 | 3.24 | 0.3.18 | security update to php 8.2.35, alpine 3.24, new maintainer |
 | 3.1.6 | 8.2.7 |1.24-r6 | 3.18 | 0.3.17 | upgrade to php 8.2.5 |
 | 3.1.5 | 8.2.6 |1.24-r6 | 3.18 | 0.3.17 | upgrade to php 8.2.6 |
