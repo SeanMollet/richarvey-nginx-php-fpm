@@ -3,14 +3,14 @@
 ## Overview
 This is a Dockerfile/image to build a container for nginx and php-fpm, with the ability to pull website code from git when the container is created, as well as allowing the container to push and pull changes to the code to and from git. The container also has the ability to update templated files with variables passed to docker in order to update your code and settings. There is support for lets encrypt SSL configurations, custom nginx configs, core nginx/PHP variable overrides for running preferences, X-Forwarded-For headers and UID mapping for local volume support.
 
-> **This is an updated build of [richarvey/nginx-php-fpm](https://github.com/richarvey/nginx-php-fpm), originally created by Ric Harvey.** The original image hasn't been updated since 2023 and is affected by recent PHP CVEs. This is the same image, with the same features, configuration and documentation, rebuilt on current PHP 8.2, nginx and Alpine releases to pick up security fixes. To switch, replace `richarvey/nginx-php-fpm` with `seanmollet/richarvey-nginx-php-fpm`. Maintained by Sean Mollet <sean@malmoset.com>.
+> **This is an updated build of [richarvey/nginx-php-fpm](https://github.com/richarvey/nginx-php-fpm), originally created by Ric Harvey.** The original image hasn't been updated since 2023 and is affected by recent PHP CVEs. This is the same image, with the same features, configuration and documentation, rebuilt on current PHP 8.2, nginx and Alpine releases to pick up security fixes. As of 3.2.3 it ships nginx 1.30.7, which fixes the November 2026 nginx CVEs (CVE-2026-123007, CVE-2026-118899 and 8 others; see [nginx security advisories](https://nginx.org/en/security_advisories.html)). To switch, replace `richarvey/nginx-php-fpm` with `seanmollet/richarvey-nginx-php-fpm`. Maintained by Sean Mollet <sean@malmoset.com>.
 
 If you have improvements or suggestions please open an issue or pull request on the GitHub project page.
 
 ### Versioning
 | Docker Tag | Git Release | Nginx Version | PHP Version | Alpine Version |
 |-----|-------|-----|--------|--------|
-| latest/![docker version](https://img.shields.io/docker/v/seanmollet/richarvey-nginx-php-fpm?sort=semver)| Main Branch |1.30.6-r0 | 8.2.35 | 3.24 |
+| latest/![docker version](https://img.shields.io/docker/v/seanmollet/richarvey-nginx-php-fpm?sort=semver)| Main Branch |1.30.7-r0 | 8.2.35 | 3.24 |
 
 For other tags please see: [versioning](https://github.com/SeanMollet/richarvey-nginx-php-fpm/blob/main/docs/versioning.md)
 

@@ -2,7 +2,7 @@ FROM php:8.2.35-fpm-alpine3.24
 
 LABEL maintainer="Sean Mollet <sean@malmoset.com>" \
       org.opencontainers.image.source="https://github.com/SeanMollet/richarvey-nginx-php-fpm" \
-      org.opencontainers.image.description="Maintained fork of richarvey/nginx-php-fpm (originally by Ric Harvey)"
+      org.opencontainers.image.description="Maintained fork of richarvey/nginx-php-fpm (originally by Ric Harvey). nginx 1.30.7 (patched for Nov 2026 nginx CVEs), PHP 8.2.35"
 
 ENV php_conf /usr/local/etc/php-fpm.conf
 ENV fpm_conf /usr/local/etc/php-fpm.d/www.conf
@@ -19,7 +19,8 @@ RUN apk add --no-cache gnu-libiconv
 # INstall nginx + lua and devel kit
 RUN apk add --no-cache nginx \
     nginx-mod-http-lua \
-    nginx-mod-devel-kit
+    nginx-mod-devel-kit && \
+    apk version -t "$(apk info -e -v nginx | sed 's/^nginx-//')" 1.30.7-r0 | grep -qv '<'
 
 RUN echo @testing https://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
     echo /etc/apk/respositories && \
